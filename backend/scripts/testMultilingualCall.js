@@ -6,7 +6,8 @@ dotenv.config();
 const RAYA_BASE = process.env.RAYA_CALLING_BASE_URL || "https://v1.getraya.app/api";
 const API_KEY = process.env.RAYA_API_KEY;
 const AGENT_ID =
-  process.env.RAYA_AGENT_ID_TAMIL
+  process.env.RAYA_CALL_AGENT_ID_MULTILINGUAL
+  || process.env.RAYA_AGENT_ID_TAMIL
   || process.env.RAYA_CALL_AGENT_ID_TAMIL
   || process.env.RAYA_CALL_AGENT_ID;
 const OUT_DID = process.env.RAYA_OUT_DID;

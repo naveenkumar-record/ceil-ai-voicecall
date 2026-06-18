@@ -196,6 +196,10 @@ export async function initiateBatchCalls({ candidates = [], mandate = {} }) {
 }
 
 function getAgentIdForLanguage(language = "English") {
+  if (process.env.RAYA_CALL_AGENT_ID_MULTILINGUAL) {
+    return process.env.RAYA_CALL_AGENT_ID_MULTILINGUAL;
+  }
+
   const normalizedLanguage = normalizeLanguageKey(language);
 
   const explicitAgentId = process.env[`RAYA_CALL_AGENT_ID_${normalizedLanguage.toUpperCase()}`];
